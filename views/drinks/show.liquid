@@ -1,0 +1,32 @@
+{% layout "layout.liquid" %} 
+
+{% block content %}
+<header>
+    <a href="/drinks"><button>All Drinks</button></a>
+</header>
+    <div id="drink">
+        <div class="show-left">
+            <h2>{{drink.name}}</h2>
+            <img src="{{drink.image}}"/>
+            <div class="show-buttons">
+                <a href="/drinks/{{drink._id}}/edit"><button>Edit item</button></a>
+                <form action="/drinks/{{drink._id}}?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete">
+                </form> 
+            </div>
+        </div>
+        <div class="show-right">
+            <h2>Ingredients</h2>
+            <p>{{drink.measurements.measurement1}}  {{drink.ingredients.ingredient1}}</p>
+            <p>{{drink.measurements.measurement2}}  {{drink.ingredients.ingredient2}}</p>
+            <p>{{drink.measurements.measurement3}}  {{drink.ingredients.ingredient3}}</p>
+            <p>{{drink.measurements.measurement4}}  {{drink.ingredients.ingredient4}}</p>
+            <p>{{drink.measurements.measurement5}}  {{drink.ingredients.ingredient5}}</p>
+            <p>{{drink.measurements.measurement6}}  {{drink.ingredients.ingredient6}}</p>
+            <p>{{drink.measurements.measurement7}}  {{drink.ingredients.ingredient7}}</p>
+            <p>{{drink.measurements.measurement8}}  {{drink.ingredients.ingredient8}}</p>
+            <p>{{drink.measurements.measurement9}}  {{drink.ingredients.ingredient9}}</p>
+            <p>{{drink.measurements.measurement10}}  {{drink.ingredients.ingredient10}}</p>
+        </div>
+    </div>
+{% endblock %}

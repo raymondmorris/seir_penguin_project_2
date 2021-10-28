@@ -1,0 +1,16 @@
+{% layout "layout.liquid" %} 
+
+{% block content %}
+
+<div>
+  <a href="/drinks/new"><button>Create A New Drink</button></a>
+    {% for drink in drinks %}
+        <article>
+            <a href="/drinks/{{drink._id}}">
+                <h2>{{drink.name}}</h2>
+            </a>
+        </article>
+    {% endfor %}
+</div>
+
+{% endblock %}
