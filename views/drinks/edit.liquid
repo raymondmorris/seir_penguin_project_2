@@ -8,7 +8,7 @@
 
     <div id="index" class="main-page">
         
-            <form id="new-form" action="/drinks" method="post">
+            <form id="new-form" action="/drinks/{{drink._id}}?_method=PUT" method="post">
                 <div class="new-form-tables">
                     <table class="new-description">
                         <tr><td>Name</td> <td><input type="text" name="name" value="{{drink.name}}"></td></tr>
