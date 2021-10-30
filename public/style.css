@@ -1,0 +1,514 @@
+html { 
+    background-color: rgb(61, 57, 57);
+}
+body {
+  max-width: 1300px;
+  background-color: rgb(61, 57, 57);
+  letter-spacing: 0.1rem;
+  margin: 0 auto;
+}
+main h2, h3 {
+  color: white;
+  text-align: center;
+}
+
+/* ************************************** */
+/* ************************************** */
+/* Headers */
+/* ************************************** */
+/* ************************************** */
+#main-header {
+  max-width: 1300px;
+  background-color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.5rem 0.4rem 0 0.4rem;
+  padding: 0.2rem 0.5rem;
+  border: 1px solid purple;
+}
+.header-left {
+    width: 35%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+.header-left a {
+    width: 20%;
+    height: 95%;
+}
+#main-header img {
+  border: 0.02rem solid purple;
+  box-shadow: 0.1rem 0.1rem rgb(182, 11, 182);
+  border-radius: 50%;
+  width: 100%;
+  cursor: pointer;
+}
+#main-header h3 {
+    width: 50%;
+    margin-left: .1rem;
+    margin: .1rem 0;
+}
+.logged-out-links {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background: black;
+    text-align: center;
+}
+.logged-out-links a {
+    margin: .2rem;
+    width: 100%;
+    height: 100%;
+}
+.logged-out-links button {
+    letter-spacing: .1rem;
+    border: .5px solid purple;
+    box-shadow: 1px 1px rgb(182, 11, 182);
+    background: none;
+    color: white;
+    width: 100%;
+    height: 3rem;
+    cursor: pointer;
+}
+.logged-in-links {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    background: black;
+    text-align: center;
+}
+.logged-in-links a {
+    margin: .2rem;
+    width: 100%;
+    height: 100%;
+}
+.logged-in-links button {
+    letter-spacing: .1rem;
+    border: .5px solid purple;
+    box-shadow: 1px 1px rgb(182, 11, 182);
+    background: none;
+    color: white;
+    width: 100%;
+    height: 3rem;
+    cursor: pointer;
+}
+
+/* ************************************** */
+/* ************************************** */
+/* Main header nav (Hamburger) */
+/* ************************************** */
+/* ************************************** */
+#nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+.nav-hamburger {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh;
+    width: 10%;
+    cursor: pointer;
+}
+#main-header-nav {
+    position: relative;
+    height: 100%;
+    max-height: 50px;
+    width: 100%;
+    max-width: 45px;
+    padding: 0;
+    margin: auto .4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .5s ease-in-out;
+    box-sizing: border-box;
+}
+.main-header-button {
+    background-color: lightgray;
+    height: .4vh;
+    max-height: 2px;
+    width: 3.5vw;
+    max-width: 38px;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+.main-header-button::before,
+.main-header-button::after {
+    background-color: lightgray;
+    content: '';
+    position: absolute;
+    height: .4vh;
+    max-height: 2px;
+    width: 3.5vw;
+    max-width: 38px;
+    border-radius: 5px;
+    transition: all .5s ease-in-out;
+}
+
+.main-header-button::before {
+    transform: translateY(-1.2vw);
+}
+.main-header-button::after {
+    transform: translateY(1.2vw);
+}
+
+/* ************************************** */
+/* Animation */
+/* ************************************** */
+#main-header-nav.open .main-header-button {
+    background: transparent;
+}
+#main-header-nav.open .main-header-button::before {
+    transform: rotate(45deg) 
+}
+#main-header-nav.open .main-header-button::after {
+    transform: rotate(-45deg) 
+
+}
+/* ************************************** */
+/* ************************************** */
+/*  Main Page Modal  */
+/* ************************************** */
+/* ************************************** */
+#main-modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+}
+  
+.modal-content {
+    background-color: rgb(29, 1, 29);
+    margin: 15% auto;
+    padding: .5rem;
+    border: 1px solid #888;
+    width: 580px;
+    height: 140px;
+}
+  
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 2rem;
+    font-weight: bold;
+}
+  
+.close:hover,
+.close:focus {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+  .modal-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal-header h2 {
+    margin: 0 auto;
+}
+.modal-box-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60%;
+    width: 80%;
+    margin: auto;
+}
+.modal-box-content a {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+}
+.modal-box-content input {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+}
+.modal-box-content form {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 50%;
+    cursor: pointer;
+}
+.modal-box-content button {
+    width: 60%;
+    height: 80%;
+    letter-spacing: .1rem;
+    border: .5px solid purple;
+    box-shadow: 1px 1px rgb(182, 11, 182);
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* ************************************** */
+/* ************************************** */
+/* Index Page */
+/* ************************************** */
+/* ************************************** */
+#index-container {
+  height: 115vh;
+  max-height: 650px;
+  width: 95%;
+  max-width: 900px;
+  margin: auto;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  border-top: 2px solid purple;
+  border-bottom: 2px solid purple;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+#index-image {
+  border: 2px solid black;
+  width: 22%;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  text-align: center;
+  cursor: pointer;
+}
+#index-image a {
+  text-decoration: none;
+  width: 100%;
+}
+#index-image img {
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+#index-image h4 {
+  height: 2rem;
+  color: white;
+  margin: 0.3rem;
+  font-size: 0.8rem;
+}
+
+/* ************************************** */
+/* ************************************** */
+/*  Show Page */
+/* ************************************** */
+/* ************************************** */
+#show-container {
+    border-bottom: 2px solid purple;
+    border-top: 2px solid purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 70vh;
+    width: 90%;
+    margin: auto;
+    margin-top: 1rem;
+}
+.show-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+}
+.show-left img {
+    border: 2px solid black;
+    width: 20vw;
+}
+.show-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+.show-buttons form, a {
+    width: 20%;
+    height: 150%;
+}
+.show-buttons input, button {
+    border: .5px solid purple;
+    box-shadow: 1px 1px rgb(182, 11, 182);
+    background: black;
+    color: white;
+    letter-spacing: .1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.show-right {
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    color: white;
+}
+.show-right p {
+    font-weight: bold;
+}
+.show-instructions {
+    border-bottom: 2px solid purple;
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+/* ************************************** */
+/* ************************************** */
+/* Show Page Modals */
+/* ************************************** */
+/* ************************************** */
+#delete-modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+}
+#edit-modal {
+    display: none; 
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* ************************************** */
+/* ************************************** */
+/* Edit & New Pages */
+/* ************************************** */
+/* ************************************** */
+.new-page h2 {
+    margin: .4rem auto;
+}
+.new-form-tables {
+    height: 95vh;
+    text-align: center;
+}
+.new-description {
+    height: 70vh;
+    width: 90%;
+    margin: .5rem auto;
+    padding: 1rem 0;
+    border-top: 2px solid purple;
+    border-bottom: 2px solid purple;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: space-around;
+    color: white;
+    font-weight: bold;
+}
+.new-description table {
+    width: 50%;
+    padding: 0 .2rem;
+}
+.new-description input {
+    width: 100%;
+}
+.new-form-tables .new-submit {
+    height: 7vh;
+    width: 15%;
+    border: .5px solid purple;
+    box-shadow: 1px 1px rgb(182, 11, 182);
+    background: black;
+    color: white;
+    letter-spacing: .1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ************************************** */
+/* ************************************** */
+/* User signup and login */
+/* ************************************** */
+/* ************************************** */
+.user-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 100%;
+}
+.user-login-form {
+    width: 50%;
+    height: 80%;
+    margin: 0 auto;
+}
+.user-login-form form {
+    height: 100%;
+    color: white;
+}
+.user-login-form fieldset {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 45%;
+    max-height: 158px;
+    font-size: 1.2rem;
+}
+.user-login-form label {
+    margin: .8rem auto;
+}
+.user-login-form input[type="submit"] {
+    height: 40%;
+    border: .5px solid purple;
+    box-shadow: 1px 1px rgb(182, 11, 182);
+    background: black;
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+  
+
+
+
+

@@ -6,12 +6,23 @@ const Drink = require("../models/drink.js")
 
 const router = express.Router()
 
+/////////////////////////
+// Middleware
+/////////////////////////
+router.use((req, res, next) => {
+  if(req.session.loggedIn) {
+    next()
+  } else {
+    res.redirect("/user/login")
+  }
+})
+
 //////////////////////////////
 // Routes
 //////////////////////////////
 // index Route
 router.get("/", (req, res) => {
-    Drink.find({})
+    Drink.find({username: req.session.username})
     .then((drinks) => {
         res.render("drinks/index.liquid", {drinks})
     })
@@ -27,6 +38,9 @@ router.get("/new", (req, res) => {
 
 // Create route
 router.post("/", (req, res) => {
+  
+  req.body.username = req.session.username
+
   Drink.create(req.body)
     .then((drinks) => {
       res.redirect("/drinks");

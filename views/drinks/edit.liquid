@@ -2,43 +2,45 @@
 
 {% block content%}
 
-<header>
-    <a href="/drinks"><button>All Drinks</button></a>
-</header>
-
     <div id="index" class="main-page">
-        
+        <h2>Edit Drink Form</h2>
             <form id="new-form" action="/drinks/{{drink._id}}?_method=PUT" method="post">
                 <div class="new-form-tables">
-                    <table class="new-description">
-                        <tr><td>Name</td> <td><input type="text" name="name" value="{{drink.name}}"></td></tr>
-                        <tr><td>Image URL</td> <td><input type="text" name="image" value="{{drink.image}}"></td></tr>
-                        <tr><td>Glass Type</td> <td><input type="text" name="glass" value="{{drink.glass}}"/></td></tr>
-                        <tr><td>Measurement 1</td> <td><input type="text" name="measurements[measurement1]" value="{{drink.measurements.measurement1}}"></td></tr>
-                        <tr><td>Measurement 2</td> <td><input type="text" name="measurements[measurement2]" value="{{drink.measurements.measurement2}}"></td></td></tr>
-                        <tr><td>Measurement 3</td> <td><input type="text" name="measurements[measurement3]" value="{{drink.measurements.measurement3}}"></td></td></tr>
-                        <tr><td>Measurement 4</td> <td><input type="text" name="measurements[measurement4]" value="{{drink.measurements.measurement4}}"></td></td></tr>
-                        <tr><td>Measurement 5</td> <td><input type="text" name="measurements[measurement5]" value="{{drink.measurements.measurement5}}"></td></td></tr>
-                        <tr><td>Measurement 6</td> <td><input type="text" name="measurements[measurement6]" value="{{drink.measurements.measurement6}}"></td></td></tr>
-                        <tr><td>Measurement 7</td> <td><input type="text" name="measurements[measurement7]" value="{{drink.measurements.measurement7}}"></td></td></tr>
-                        <tr><td>Measurement 8</td> <td><input type="text" name="measurements[measurement8]" value="{{drink.measurements.measurement8}}"></td></td></tr>
-                        <tr><td>Measurement 9</td> <td><input type="text" name="measurements[measurement9]" value="{{drink.measurements.measurement9}}"></td></td></tr>
-                        <tr><td>Measurement 10</td> <td><input type="text" name="measurements[measurement10]" value="{{drink.measurements.measurement10}}"></td></td></tr>
-                        <tr><td>Ingredient 1</td> <td><input type="text" name="ingredients[ingredient1]" value="{{drink.ingredients.ingredient1}}"></td></td></tr>
-                        <tr><td>Ingredient 2</td> <td><input type="text" name="ingredients[ingredient2]" value="{{drink.ingredients.ingredient2}}"></td></td></tr>
-                        <tr><td>Ingredient 3</td> <td><input type="text" name="ingredients[ingredient3]" value="{{drink.ingredients.ingredient3}}"></td></td></tr>
-                        <tr><td>Ingredient 4</td> <td><input type="text" name="ingredients[ingredient4]" value="{{drink.ingredients.ingredient4}}"></td></td></tr>
-                        <tr><td>Ingredient 5</td> <td><input type="text" name="ingredients[ingredient5]" value="{{drink.ingredients.ingredient5}}"></td></td></tr>
-                        <tr><td>Ingredient 6</td> <td><input type="text" name="ingredients[ingredient6]" value="{{drink.ingredients.ingredient6}}"></td></td></tr>
-                        <tr><td>Ingredient 7</td> <td><input type="text" name="ingredients[ingredient7]" value="{{drink.ingredients.ingredient7}}"></td></td></tr>
-                        <tr><td>Ingredient 8</td> <td><input type="text" name="ingredients[ingredient8]" value="{{drink.ingredients.ingredient8}}"></td></td></tr>
-                        <tr><td>Ingredient 9</td> <td><input type="text" name="ingredients[ingredient9]" value="{{drink.ingredients.ingredient9}}"></td></td></tr>
-                        <tr><td>Ingredient 10</td> <td><input type="text" name="ingredients[ingredient10]" value="{{drink.ingredients.ingredient10}}"></td></td></tr>
+                    <div class="new-description">
 
-                        <tr><td>Instructions</td> <td><input type="text" name="instructions" value="{{drink.instructions}}"></td></td></tr>
-                    </table>
+                        <table class="table-left">
+                            <tr><td>Name: </td> <td><input type="text" name="name" value="{{drink.name}}"></td></tr>
+                            <tr><td>Image URL: </td> <td><input type="text" name="image" value="{{drink.image}}"></td></tr>
+                            <tr><td>Measurement 1: </td> <td><input type="text" name="measurements[measurement1]" value="{{drink.measurements.measurement1}}"></td></tr>
+                            <tr><td>Measurement 2: </td> <td><input type="text" name="measurements[measurement2]" value="{{drink.measurements.measurement2}}"></td></td></tr>
+                            <tr><td>Measurement 3: </td> <td><input type="text" name="measurements[measurement3]" value="{{drink.measurements.measurement3}}"></td></td></tr>
+                            <tr><td>Measurement 4: </td> <td><input type="text" name="measurements[measurement4]" value="{{drink.measurements.measurement4}}"></td></td></tr>
+                            <tr><td>Measurement 5: </td> <td><input type="text" name="measurements[measurement5]" value="{{drink.measurements.measurement5}}"></td></td></tr>
+                            <tr><td>Measurement 6: </td> <td><input type="text" name="measurements[measurement6]" value="{{drink.measurements.measurement6}}"></td></td></tr>
+                            <tr><td>Measurement 7: </td> <td><input type="text" name="measurements[measurement7]" value="{{drink.measurements.measurement7}}"></td></td></tr>
+                            <tr><td>Measurement 8: </td> <td><input type="text" name="measurements[measurement8]" value="{{drink.measurements.measurement8}}"></td></td></tr>
+                            <tr><td>Measurement 9: </td> <td><input type="text" name="measurements[measurement9]" value="{{drink.measurements.measurement9}}"></td></td></tr>
+                            <tr><td>Measurement 10: </td> <td><input type="text" name="measurements[measurement10]" value="{{drink.measurements.measurement10}}"></td></td></tr>
+                        </table>
+
+                        <table class="table-right">
+                            <tr><td>Instructions: </td> <td><input type="text" name="instructions" value="{{drink.instructions}}"></td></td></tr>
+                            <tr><td>Glass Type: </td> <td><input type="text" name="glass" value="{{drink.glass}}"/></td></tr>
+                            <tr><td>Ingredient 1: </td> <td><input type="text" name="ingredients[ingredient1]" value="{{drink.ingredients.ingredient1}}"></td></td></tr>
+                            <tr><td>Ingredient 2: </td> <td><input type="text" name="ingredients[ingredient2]" value="{{drink.ingredients.ingredient2}}"></td></td></tr>
+                            <tr><td>Ingredient 3: </td> <td><input type="text" name="ingredients[ingredient3]" value="{{drink.ingredients.ingredient3}}"></td></td></tr>
+                            <tr><td>Ingredient 4: </td> <td><input type="text" name="ingredients[ingredient4]" value="{{drink.ingredients.ingredient4}}"></td></td></tr>
+                            <tr><td>Ingredient 5: </td> <td><input type="text" name="ingredients[ingredient5]" value="{{drink.ingredients.ingredient5}}"></td></td></tr>
+                            <tr><td>Ingredient 6: </td> <td><input type="text" name="ingredients[ingredient6]" value="{{drink.ingredients.ingredient6}}"></td></td></tr>
+                            <tr><td>Ingredient 7: </td> <td><input type="text" name="ingredients[ingredient7]" value="{{drink.ingredients.ingredient7}}"></td></td></tr>
+                            <tr><td>Ingredient 8: </td> <td><input type="text" name="ingredients[ingredient8]" value="{{drink.ingredients.ingredient8}}"></td></td></tr>
+                            <tr><td>Ingredient 9: </td> <td><input type="text" name="ingredients[ingredient9]" value="{{drink.ingredients.ingredient9}}"></td></td></tr>
+                            <tr><td>Ingredient 10: </td> <td><input type="text" name="ingredients[ingredient10]" value="{{drink.ingredients.ingredient10}}"></td></td></tr>
+                        </table>
+
+                    </div>
+                    <input class="new-submit" type="submit" value="Edit Drink">
                 </div>
-                <input type="submit" value="Edit Drink">
             </form>
 
 {% endblock %}

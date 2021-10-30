@@ -2,43 +2,45 @@
 
 {% block content%}
 
-<header>
-    <a href="/drinks"><button>All Drinks</button></a>
-</header>
-
-    <div id="index" class="main-page">
-        
-            <form id="new-form" action="/drinks" method="post">
+    <div id="index" class="new-page">
+        <h2 class="title">New Drink Form</h2>
+            <form id="new-form" action="/drinks/{{drink._id}}?_method=PUT" method="post">
                 <div class="new-form-tables">
-                    <table class="new-description">
-                        <tr><td>Name</td> <td><input type="text" name="name"></td></tr>
-                        <tr><td>Image URL</td> <td><input type="text" name="image"></td></tr>
-                        <tr><td>Glass Type</td> <td><input type="text" name="glass"/></td></tr>
-                        <tr><td>Measurement 1</td> <td><input type="text" name="measurements[measurement1]"></td></tr>
-                        <tr><td>Measurement 2</td> <td><input type="text" name="measurements[measurement2]"></td></tr>
-                        <tr><td>Measurement 3</td> <td><input type="text" name="measurements[measurement3]"></td></tr>
-                        <tr><td>Measurement 4</td> <td><input type="text" name="measurements[measurement4]"></td></tr>
-                        <tr><td>Measurement 5</td> <td><input type="text" name="measurements[measurement5]"></td></tr>
-                        <tr><td>Measurement 6</td> <td><input type="text" name="measurements[measurement6]"></td></tr>
-                        <tr><td>Measurement 7</td> <td><input type="text" name="measurements[measurement7]"></td></tr>
-                        <tr><td>Measurement 8</td> <td><input type="text" name="measurements[measurement8]"></td></tr>
-                        <tr><td>Measurement 9</td> <td><input type="text" name="measurements[measurement9]"></td></tr>
-                        <tr><td>Measurement 10</td> <td><input type="text" name="measurements[measurement10]"></td></tr>
-                        <tr><td>Ingredient 1</td> <td><input type="text" name="ingredients[ingredient1]"></td></tr>
-                        <tr><td>Ingredient 2</td> <td><input type="text" name="ingredients[ingredient2]"></td></tr>
-                        <tr><td>Ingredient 3</td> <td><input type="text" name="ingredients[ingredient3]"></td></tr>
-                        <tr><td>Ingredient 4</td> <td><input type="text" name="ingredients[ingredient4]"></td></tr>
-                        <tr><td>Ingredient 5</td> <td><input type="text" name="ingredients[ingredient5]"></td></tr>
-                        <tr><td>Ingredient 6</td> <td><input type="text" name="ingredients[ingredient6]"></td></tr>
-                        <tr><td>Ingredient 7</td> <td><input type="text" name="ingredients[ingredient7]"></td></tr>
-                        <tr><td>Ingredient 8</td> <td><input type="text" name="ingredients[ingredient8]"></td></tr>
-                        <tr><td>Ingredient 9</td> <td><input type="text" name="ingredients[ingredient9]"></td></tr>
-                        <tr><td>Ingredient 10</td> <td><input type="text" name="ingredients[ingredient10]"></td></tr>
+                    <div class="new-description">
 
-                        <tr><td>Instructions</td> <td><input type="text" name="instructions"/></td></tr>
-                    </table>
+                        <table class="table-left">
+                            <tr><td>Name: </td> <td><input type="text" name="name"></td></tr>
+                            <tr><td>Image URL: </td> <td><input type="text" name="image"></td></tr>
+                            <tr><td>Measurement 1: </td> <td><input type="text" name="measurements[measurement1]"></td></tr>
+                            <tr><td>Measurement 2: </td> <td><input type="text" name="measurements[measurement2]"></td></td></tr>
+                            <tr><td>Measurement 3: </td> <td><input type="text" name="measurements[measurement3]"></td></td></tr>
+                            <tr><td>Measurement 4: </td> <td><input type="text" name="measurements[measurement4]"></td></td></tr>
+                            <tr><td>Measurement 5: </td> <td><input type="text" name="measurements[measurement5]"></td></td></tr>
+                            <tr><td>Measurement 6: </td> <td><input type="text" name="measurements[measurement6]"></td></td></tr>
+                            <tr><td>Measurement 7: </td> <td><input type="text" name="measurements[measurement7]"></td></td></tr>
+                            <tr><td>Measurement 8: </td> <td><input type="text" name="measurements[measurement8]"></td></td></tr>
+                            <tr><td>Measurement 9: </td> <td><input type="text" name="measurements[measurement9]"></td></td></tr>
+                            <tr><td>Measurement 10: </td> <td><input type="text" name="measurements[measurement10]"></td></td></tr>
+                        </table>
+
+                        <table class="table-right">
+                            <tr><td>Instructions: </td> <td><input type="text" name="instructions"></td></td></tr>
+                            <tr><td>Glass Type: </td> <td><input type="text" name="glass"/></td></tr>
+                            <tr><td>Ingredient 1: </td> <td><input type="text" name="ingredients[ingredient1]"></td></td></tr>
+                            <tr><td>Ingredient 2: </td> <td><input type="text" name="ingredients[ingredient2]"></td></td></tr>
+                            <tr><td>Ingredient 3: </td> <td><input type="text" name="ingredients[ingredient3]"></td></td></tr>
+                            <tr><td>Ingredient 4: </td> <td><input type="text" name="ingredients[ingredient4]"></td></td></tr>
+                            <tr><td>Ingredient 5: </td> <td><input type="text" name="ingredients[ingredient5]"></td></td></tr>
+                            <tr><td>Ingredient 6: </td> <td><input type="text" name="ingredients[ingredient6]"></td></td></tr>
+                            <tr><td>Ingredient 7: </td> <td><input type="text" name="ingredients[ingredient7]"></td></td></tr>
+                            <tr><td>Ingredient 8: </td> <td><input type="text" name="ingredients[ingredient8]"></td></td></tr>
+                            <tr><td>Ingredient 9: </td> <td><input type="text" name="ingredients[ingredient9]"></td></td></tr>
+                            <tr><td>Ingredient 10: </td> <td><input type="text" name="ingredients[ingredient10]"></td></td></tr>
+                        </table>
+
+                    </div>
+                    <input class="new-submit" type="submit" value="Create Drink">
                 </div>
-                <input type="submit" value="Create Drink">
             </form>
 
 {% endblock %}

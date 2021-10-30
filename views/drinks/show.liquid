@@ -1,18 +1,44 @@
 {% layout "layout.liquid" %} 
 
 {% block content %}
-<header>
-    <a href="/drinks"><button>All Drinks</button></a>
-</header>
-    <div id="drink">
+
+<div id="edit-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Are you sure you want to edit this Drink?</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-box-content">
+        <a href="/drinks/{{drink._id}}/edit"><button>EDIT</button></a>
+        <a><button class="cancel">CANCEL</button></a>
+      </div>
+      <h2></h2>
+    </div>
+  </div>
+
+  <div id="delete-modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Are You Sure You Want to Delete This Drink?</h2>
+        <span class="close">&times;</span>
+      </div>
+      <div class="modal-box-content">
+        <form action="/drinks/{{drink._id}}?_method=DELETE" method="POST">
+            <button>DELETE</button>
+        </form>
+        <a><button class="cancel">CANCEL</button></a>
+      </div>
+      <h2></h2>
+    </div>
+  </div>
+
+    <div id="show-container">
         <div class="show-left">
             <h2>{{drink.name}}</h2>
             <img src="{{drink.image}}"/>
             <div class="show-buttons">
-                <a href="/drinks/{{drink._id}}/edit"><button>Edit item</button></a>
-                <form action="/drinks/{{drink._id}}?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete">
-                </form> 
+                <a><input class="edit-modal-button" type="submit" value="Edit"/></a>
+                <a><input class="delete-modal-button" type="submit" value="Delete"></a>
             </div>
         </div>
         <div class="show-right">
@@ -29,4 +55,10 @@
             <p>{{drink.measurements.measurement10}}  {{drink.ingredients.ingredient10}}</p>
         </div>
     </div>
+    <div class="show-instructions">
+        <h2>Instructions</h2>
+        <p>{{drink.instructions}}</p>
+        <h2>Glass</h2>
+        <p>{{drink.glass}}</p>
+    </div>    
 {% endblock %}

@@ -1,0 +1,374 @@
+@media screen and (max-width: 600px) {
+    /*  Header */
+    .header-left {
+        width: 45%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header-left a {
+        width: 35%;
+        height: 95%;
+    }
+    #main-header img {
+      border: 0.02rem solid purple;
+      box-shadow: 0.1rem 0.1rem rgb(182, 11, 182);
+      border-radius: 50%;
+      width: 100%;
+      cursor: pointer;
+    }
+    #main-header h3 {
+        width: 60%;
+        margin: .1rem;
+    }
+    .logged-out-links {
+        width: 60%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        background: black;
+        text-align: center;
+    }
+    .logged-out-links a {
+        margin: .2rem;
+        width: 80%;
+        height: 10%;
+    }
+    .logged-out-links button {
+        letter-spacing: .1rem;
+        border: .5px solid purple;
+        box-shadow: 1px 1px rgb(182, 11, 182);
+        background: none;
+        color: white;
+        width: 100%;
+        height: 2rem;
+        font-size: .8rem;
+        cursor: pointer;
+    }
+    .logged-in-links {
+        width: 60%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        background: black;
+        text-align: center;
+    }
+    .logged-in-links a {
+        margin: .2rem;
+        width: 80%;
+        height: 10%;
+    }
+    .logged-in-links button {
+        letter-spacing: .1rem;
+        border: .5px solid purple;
+        box-shadow: 1px 1px rgb(182, 11, 182);
+        background: none;
+        color: white;
+        width: 100%;
+        height: 2rem;
+        font-size: .8rem;
+        cursor: pointer;
+    }
+    .nav-hamburger {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10vh;
+        width: 20%;
+        cursor: pointer;
+    }
+    .main-header-button {
+        background-color: lightgray;
+        height: .4vh;
+        width: 6vw;
+        border-radius: 5px;
+        transition: all .5s ease-in-out;
+    }
+    .main-header-button::before,
+    .main-header-button::after {
+        background-color: lightgray;
+        content: '';
+        position: absolute;
+        height: .4vh;
+        width: 6vw;
+        border-radius: 5px;
+        transition: all .5s ease-in-out;
+    }
+    .main-header-button::before {
+        transform: translateY(-2vw);
+    }
+    .main-header-button::after {
+        transform: translateY(2vw);
+    }
+
+    /* Show & Index */
+    .modal-content {
+        background-color: rgb(29, 1, 29);
+        margin: 40% auto;
+        padding: .5rem;
+        border: 1px solid #888;
+        width: 80%;
+        height: 25%;
+    }
+    .modal-box-content button {
+        width: 80%;
+        height: 80%;
+        letter-spacing: .1rem;
+        border: .5px solid purple;
+        box-shadow: 1px 1px rgb(182, 11, 182);
+        background: none;
+        color: white;
+        cursor: pointer;
+    }
+    #index-container {
+        border: none;
+        border-top: 3px solid purple;
+    }
+    #index-image {
+        width: 70%;
+    }
+    #show-container {
+        border-bottom: 2px solid purple;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100vh;
+        width: 90%;
+        margin: auto;
+    }
+    .show-left img {
+        width: 50vw;
+    }
+    .show-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 45%;
+    }
+    .show-right {
+        text-align: center;
+        width: 80%;
+        height: 55%;
+        color: white;
+    }
+
+    /*  Edit & New  */
+    .new-page h2 {
+        margin: .4rem auto;
+    }
+    .new-form-tables {
+        height: 120vh;
+        text-align: center;
+    }
+    .new-description {
+        height: 100vh;
+        width: 90%;
+        margin: .5rem auto;
+        padding: .5rem 0;
+        border-top: 2px solid purple;
+        border-bottom: 2px solid purple;
+        display: flex;
+        flex-direction: column;
+        color: white;
+        font-weight: bold;
+    }
+    .new-description table {
+        width: 100%;
+    }
+    .new-description input {
+        width: 100%;
+    }
+    .new-form-tables .new-submit {
+        height: 7vh;
+        width: 40%;
+        border: .5px solid purple;
+        box-shadow: 1px 1px rgb(182, 11, 182);
+        background: black;
+        color: white;
+        letter-spacing: .1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* Signup and Login forms */
+    .user-login-form {
+        width: 80%;
+        height: 80%;
+        margin: 0 auto;
+    }
+}
+
+
+
+@media screen and (max-height: 450px) {
+
+    /* Header */
+    .logged-out-links {
+        width: 80%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        background: black;
+        text-align: center;
+    }
+    .logged-out-links a {
+        margin: .2rem;
+        width: 90%;
+        height: 10%;
+    }
+    .logged-out-links button {
+        letter-spacing: .1rem;
+        border: .5px solid purple;
+        box-shadow: 1px 1px rgb(182, 11, 182);
+        background: none;
+        color: white;
+        width: 100%;
+        height: 2rem;
+        font-size: .8rem;
+        cursor: pointer;
+    }
+    .logged-in-links {
+        width: 80%;
+        height: 50%;
+        display: flex;
+        flex-direction: row;
+        background: black;
+        text-align: center;
+    }
+    .logged-in-links a {
+        margin: .2rem;
+        width: 90%;
+        height: 10%;
+    }
+    .logged-in-links button {
+        letter-spacing: .1rem;
+        border: .5px solid purple;
+        box-shadow: 1px 1px rgb(182, 11, 182);
+        background: none;
+        color: white;
+        width: 100%;
+        height: 2rem;
+        font-size: .8rem;
+        cursor: pointer;
+    }
+
+    /* Show & Index */
+    .modal-content {
+        background-color: rgb(29, 1, 29);
+        margin: 15% auto;
+        padding: .5rem;
+        border: 1px solid #888;
+        width: 70%;
+        max-width: 650px;
+        height: 30%;
+        max-height: 150px;
+    }
+    #index-container {
+        height: 105vh;
+        width: 95%;
+        margin: auto;
+        margin-bottom: 1rem;
+        border-top: 2px solid purple;
+        border-bottom: 2px solid purple;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      .title {
+          margin: .4rem auto;
+      }
+    #index-image {
+        border: 2px solid black;
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        margin: 0.5rem;
+        text-align: center;
+        cursor: pointer;
+      }
+    #show-container {
+        border-bottom: 2px solid purple;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        height: 90vh;
+        width: 90%;
+        margin: .5rem auto;
+        padding: .5rem 0;
+    }
+    .show-left img {
+        width: 30vw;
+    }
+    .show-left {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        width: 100%;
+        height: 50%;
+    }
+    .show-right {
+        text-align: center;
+        width: 80%;
+        height: 50%;
+        color: white;
+    }
+
+    /*  Edit & New  */
+    .new-page h2 {
+        margin: .4rem auto;
+    }
+    .new-form-tables {
+        height: 140vh;
+        text-align: center;
+    }
+    .new-description {
+        height: 100vh;
+        width: 90%;
+        margin: .5rem auto;
+        padding: .5rem 0;
+        border-top: 2px solid purple;
+        border-bottom: 2px solid purple;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: space-around;
+        color: white;
+        font-weight: bold;
+    }
+    .new-description table {
+        width: 50%;
+        padding: 0 .2rem;
+    }
+    .new-description input {
+        width: 100%;
+    }
+    .new-form-tables .new-submit {
+        height: 9vh;
+        width: 25%;
+        border: .5px solid purple;
+        box-shadow: 1px 1px rgb(182, 11, 182);
+        background: black;
+        color: white;
+        letter-spacing: .1rem;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    /* Signup & login forms */
+    .user-login-form {
+        width: 80%;
+        height: 100%;
+        margin: 0 auto;
+    }
+}
+

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Cocktail Bar</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/app.js" defer></script>
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/media.css" />
+  </head>
+
+  <body>
+    <main>
+
+
+        
+      <div id="main-modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Login to View Drink Recipes</h2>
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal-box-content">
+            <a href="/user/signup"><button>Signup</button></a>
+            <a href="/user/login"><button>Login</button></a>
+          </div>
+          <h2></h2>
+        </div>
+      </div>
+
+
+
+      <div id="main-index">
+
+        <header id="main-header">
+          <div class="header-left">
+            <a><img
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAkFBMVEUAAAD///+trKwgHx/d3d3h4eFhYWHMy8vPzs7s6urW1NTEw8PJyMjY2Nj6+vo8OTlbWloxLy8sKSlCPz9NTExjXl9taWkRDAy+vb20srL29PSioKC3tbXu7u5TU1NtbW14dHUcGRl/fX2joqKWlJQ9PDyHhYUaGhoTEhIPBAcjIiKOjo4dGRldXV0YERGDgIC7a0x4AAADg0lEQVR4nO3da3OaQBiG4S6KCIiKUBUNShBNqjH5//+uu2oIkvWQALP7Os81+VLSSd97OG7N6J8/AAAAAAAAAAAAAAAAAAAAAAAAAA+mNTa6juOZXLsq8TM8x+lmnYnqrJIwNay2OWMV9WPTc+fJQHXOBc9huppa7V9mzmzHjbJkrbriJn+YZob7s73Zt7vRajMOXlUPf7eJP1xuVj37njrbWm2SfdBSPfMvPPvBMDGcKzsztubJMPRfVE9azes2SIz295POmY8HLTpH5W1+GrXj2fGcs7LhP9XzNGQhCqN31WM0SRQaFK8pd0MhfSikD4X0oZA+FNKHQvpQSB8K6UMhfSikD4X0oZA+FNKHQvpQSB8K6UMhfSikD4X0oZA+FNKHQvpQSB8K6UMhfSikD4X0oZA+FNKHQvpQSB8K6UMhfSikD4X0oZA+FNKHQvpQSB8K6TsUEn/jq6siUegFqsdoziGQsbavepCmnAIZi1VP0ozWE8vNQtXTNGAUsYK4o3qe2rXOAhmzE93enbSqJ1Zip4+V+C2QH6gb1UPVSRLILzeZ6rHqIw3kHiXxeXohkD/AqZ6tFqNLe1CItqrHq24UXQlk7In8E9zxScabGkY09WSJU13f1/pe4hxsZwvxbrovi50pSezR3osi0Frkfwy7kkRnpHDAqkSgV9xHa9mRaiqbr6o3ERjvz7Z1ZOeiTfRc9A/3Qed841Z6abX38h+hN/94H9yVNu9khcwcK5mxku3pSWZZ2r6RFjIzVTJlFe5p9KS0/UIhsz8UDFnBJH8WjUrfyS4Usrh8PGvt3c0HL90K1s6lQtYntNTYuoW552ffunSQSv6qxny3OHdcvIYsrwRyBo3PShiU1oNx9nlDH6TXA3kihSc4//uC18qWYRAud9atQBKrqZYrG9x2ul58u49zdd+L8sCf6Or98RfvvaqB/ElW59cX6wjkK2Z9D1T/jkvJPczF7X9LiXXlczBP1POFm/oCeWJ5SaKDUU2H6JGt32rqrdZA/iSk22pqW3MgYzO9VlP1B2r22tRA9v+glfVXqrtyQS03egldfn0qbOAQ/UzU4vFm8mG5X3qCJXRPHMETTh+kWuAVPl/1i52LVzq8/DbxRye+MOBfB8FJKCyEIbfvFOwPm7i/ubGw5F+JkG70Xy9W9Vi/sQEAAAAAAAAAAAAAAAAAAAAAAADw+P4Db0kzABKto/UAAAAASUVORK5CYII="
+              alt="My drinks logo"
+            /></a>
+            <h3>My<br />Cocktail<br />Bar</h3>
+          </div>
+          <div id="nav-container">
+            <div class="logged-out-links">
+              <a href="/user/signup"><button>Signup</button></a>
+              <a href="/user/login"><button>Login</button></a>
+            </div>
+            <div class="nav-hamburger">
+              <div id="main-header-nav">
+                <div class="main-header-button"></div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <h2 class="title">Popular Drinks</h2>
+
+        <div id="index-container">
+          {% for drink in drinks %}
+              <article id="index-image">
+                <a class="modal-click">
+                  <img src="{{ drink.image }}" />
+                  <h4>{{ drink.name }}</h4>
+                </a>
+              </article>
+          {% endfor %}
+        </div>
+      </div>
+
+    </main>
+  </body>
+</html>
