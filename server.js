@@ -35,13 +35,18 @@ app.use(session({
 // Routes
 ///////////////////////////////
 app.get("/", (req, res) => {
-    Drink.find({})
-    .then((drinks) => {
-        res.render("index.liquid", {drinks})
-    })
-    .catch((error) => {
-        res.json({error})
-    })
+
+    if (req.session.loggedIn) {
+        res.redirect("/drinks")
+    } else {
+        Drink.find({})
+        .then((drinks) => {
+            res.render("index.liquid", {drinks})
+        })
+        .catch((error) => {
+            res.json({error})
+        })
+    }
 })
 
 app.use("/drinks", DrinksRouter)
